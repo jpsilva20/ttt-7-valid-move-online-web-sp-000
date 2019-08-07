@@ -1,8 +1,7 @@
 # code your #valid_move? method here
 
 def valid_move?(board, index)
-  def position_taken?(array, ind)
-    if array[ind] == " " || array[ind] == "" || array[ind] == nil
+    if index.between?(1,9)
       return false
     else
       return true
@@ -17,3 +16,18 @@ def position_taken?(board, index)
   else 
     return true 
 end 
+
+
+def valid_move?(board, index)
+  # if index.between?(1,9)
+  #   if !position_taken?(board, index)
+  #     true
+  #   end
+  # end
+
+  index.between?(0,8) && !position_taken?(board, index)
+end
+
+def position_taken?(board, index)
+  board[index] != " "
+end
